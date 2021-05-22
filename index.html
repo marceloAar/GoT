@@ -1,0 +1,143 @@
+<!--GoT
+    Marcelo Aceituno R
+    Full Stack JAVA 0034
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script>
+
+    $(document).ready(function() {               
+                                          
+         $('#cuadro01').click(function() {                                 
+            $('#descripcion').empty();
+
+            $.get("https://anapioficeandfire.com/api/houses/300", function(res) {
+                
+                var nombre = res.name;
+                var word = res.words;
+                var titulos = res.titles;                
+                           
+                $("#descripcion").append("House Details"+"<br><br>");
+                $("#descripcion").append("<li>"+"Nombre: "+nombre+"<br><br></li>");
+                $("#descripcion").append("<li>"+"Words: "+word+"<br></li><br><br>");
+                $("#descripcion").append("<li>"+"Titulos: "+titulos+"<br></li>");            
+                        
+            }, 'json');
+                
+            return false;              
+        });
+        
+        $('#cuadro02').click(function() {                                 
+            $('#descripcion').empty();
+
+            $.get("https://anapioficeandfire.com/api/houses/378", function(res) {
+               
+                var nombre = res.name;
+                var word = res.words;
+                var titulos = res.titles;                
+                           
+                $("#descripcion").append("House Details"+"<br><br>");
+                $("#descripcion").append("<li>"+"Nombre: "+nombre+"<br><br></li>");
+                $("#descripcion").append("<li>"+"Words: "+word+"<br></li><br><br>");
+                $("#descripcion").append("<li>"+"Titulos: "+titulos+"<br></li>");            
+                        
+            }, 'json');
+                
+            return false;              
+        }); 
+
+        $('#cuadro03').click(function() {                                 
+            $('#descripcion').empty();
+
+            $.get("https://anapioficeandfire.com/api/houses/229", function(res) {
+               
+                var nombre = res.name;
+                var word = res.words;
+                var titulos = res.titles;                
+                           
+                $("#descripcion").append("House Details"+"<br><br>");
+                $("#descripcion").append("<li>"+"Nombre: "+nombre+"<br><br></li>");
+                $("#descripcion").append("<li>"+"Words: "+word+"<br></li><br><br>");
+                $("#descripcion").append("<li>"+"Titulos: "+titulos+"<br></li>");            
+                        
+            }, 'json');
+                
+            return false;              
+        }); 
+
+        $('#cuadro04').click(function() {                                 
+            $('#descripcion').empty();
+
+            $.get("https://anapioficeandfire.com/api/houses/16", function(res) {
+               
+                var nombre = res.name;
+                var word = res.words;
+                var titulos = res.titles;                
+                           
+                $("#descripcion").append("House Details"+"<br><br>");
+                $("#descripcion").append("<li>"+"Nombre: "+nombre+"<br><br></li>");
+                $("#descripcion").append("<li>"+"Words: "+word+"<br></li><br><br>");
+                $("#descripcion").append("<li>"+"Titulos: "+titulos+"<br></li>");            
+                        
+            }, 'json');
+                
+            return false;              
+        });       
+        
+    });       
+   
+    </script>
+
+    <style>
+        body{
+            background-color: black;            
+        }
+        .cuadro{
+            width: 300px;
+            height: 250px;
+            background-color: grey;
+            margin: 0px 10px 10px 10px;
+            border: 2px solid blue;
+            display: inline-block;
+            vertical-align: top;
+        }
+        #descripcion{
+            width: 800px;
+            height: 300px;
+            border: 2px solid blue;
+            text-align: center;
+            margin-left: 250px;
+            background-color: teal;
+            font-size: 20px;
+            font: bold;
+        }
+        img{
+            width: 300px;
+            height: 250px;
+        }
+    </style>
+
+    <title>Game of Thrones</title>
+</head>
+<body>
+    
+    <h1 style="color:white">Game of Thrones</h1>
+
+    <div>
+        <div id="cuadro01" class="cuadro"><img src="imagenes/stark.jpg"></div>
+        <div id="cuadro02" class="cuadro"><img src="imagenes/targaryen.jpg"></div>
+        <div id="cuadro03" class="cuadro"><img src="imagenes/lannister.jpg"></div>
+        <div id="cuadro04" class="cuadro"><img src="imagenes/baratheon.png"></div> 
+        <div id="descripcion">
+            
+        </div>       
+    </div>
+
+</body>
+</html>
